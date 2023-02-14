@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+      <link rel="stylesheet" href="RegForm.css" type="text/css" />
+      <script language="Javascript" type="text/javascript">
+        function validate() {
+            if (password.value.length < 7) {
+                document.getElementById("output").innerHTML = ('Password must be at least 8 characters.');
+                document.getElementById("output").className = "red";
+            } 
+            else {
+                document.getElementById("output").innerHTML = ('Hooray! Your account has been successfully created.');
+                document.getElementById("output").className = "green";
+            }
+
+        }
+      </script>
+    </head>
+    <body>
+    <div id="error"></div>
+    <form id="form" action="/" method="GET">
+      <h1> Registration Form </h1>
+        <p id="output"></p>
+        <div>
+            First name: <input type="text" name="firstname" />
+        </div>
+    Last Name: <input type="text" name="lastname" /> <br>
+    Nick Name: <input type="text" name="nickname" /> <br>
+    
+    Email: <input type="email" name="email" id ="email" /> <br>
+    Password: <input type="password" name="password" id ="password" required/> <br>
+    Date of Birth: <input type="date" name="birthday" /> <br>
+    Gender: <input type="radio" name="gender"/> Male
+            <input type="radio" name="gender"/> Female <br>
+    
+    Mobile: <input type="number" name="phonenumber" /> <br>
+    Address: <textarea name="Address" cols="30" rows="10">
+    </textarea> <br>
+      <button type="submit" class="button" onclick="validate()">Submit</button>
+      <button type="button" class="button1" onclick="validate()">Reset</button>
+    </form>
+    </body>
+</html>
